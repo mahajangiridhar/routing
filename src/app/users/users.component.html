@@ -1,0 +1,13 @@
+<div class="row mt-4" *ngIf="userArr">
+    <div class="col-sm-4">
+        <ul class="list-group" >
+            <li class="list-group-item" *ngFor="let user of userArr" [class.active]="user.id === 1" [routerLink]="['/users', user.id]">
+                {{user.userName}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+       <app-user></app-user>
+       <button class="btn btn-primary" (click)="gotoProducts()">Go To Products</button>
+    </div>
+</div>
